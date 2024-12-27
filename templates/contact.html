@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h2>Contact LocalLift</h2>
+        <div class="form-section" style="padding: 70px;">
+            <h3>Register Your Shop</h3>
+            <form method="POST" action="{{ url_for('contact') }}" style="padding: 70px;">
+                <div class="form-group">
+                    <label for="owner_name">Owner Name:</label>
+                    <input type="text" id="owner_name" name="owner_name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="shop_name">Shop Name:</label>
+                    <input type="text" id="shop_name" name="shop_name" placeholder="Enter shop name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact_email">Contact Email:</label>
+                    <input type="email" id="contact_email" name="contact_email" placeholder="Enter contact email" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact_phone">Contact Phone:</label>
+                    <input type="text" id="contact_phone" name="contact_phone" placeholder="Enter contact phone" required>
+                </div>
+                <button type="submit">Register Shop</button>
+            </form>
+            {% if get_flashed_messages() %}
+                <div class="alert alert-success">{{ get_flashed_messages()[0] }}</div>
+            {% endif %}
+        </div>
+    </div>
+    <footer style="margin-top: 12ex;">
+        <p>&copy; 2024 LocalLift | <a href="/contact">Contact Us</a></p>
+    </footer>
+<!-- {% endblock %} -->

@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Welcome to LocalLift</h1>
+            <p>Discover and support local businesses in your community.</p>
+            <a href="/shop_directory" class="btn-primary">Explore Shops</a>
+        </div>
+        <div class="hero-image">
+            <img src="https://5.imimg.com/data5/SELLER/Default/2023/7/324064761/DN/KL/EI/43814048/screenshot-2023-07-10-173748.jpg" alt="Community">
+        </div>
+    </div>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <h2>Popular Categories</h2>
+        <div class="category-list">
+            <a href="/shop_directory" class="category-card">
+                <img src="https://industrialoutlook.in/wp-content/uploads/2023/01/Food.webp" alt="Food">
+                <p>Food & Beverages</p>
+            </a>
+            <a href="/shop_directory" class="category-card">
+                <img src="https://www.longancraft.com/cdn/shop/articles/How-to-Dress-Like-the-60s-Men-A-60s-Fashion-Guide-for-Men-870x570.webp?v=1723519482" alt="Fashion">
+                <p>Fashion</p>
+            </a>
+            <a href="/shop_directory" class="category-card">
+                <img src="https://10web.io/blog/wp-content/uploads/sites/2/2024/08/sell-electronics-online.jpg" alt="Electronics">
+                <p>Electronics</p>
+            </a>
+            <a href="/shop_directory" class="category-card">
+                <img src="https://images.squarespace-cdn.com/content/v1/5876279bbebafb82a7c81c00/f4e17d6a-81db-4a04-9bda-63c86c517778/IMG_3105.jpg" alt="Books">
+                <p>Books</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Featured Shops Section -->
+    <section class="featured-shops">
+        <h2>Featured Shops</h2>
+        <div class="shop-list">
+            <div class="shop-card">
+                <img src="https://thumbs.dreamstime.com/b/saint-petersburg-russia-circa-may-goods-display-sony-store-galeria-shopping-center-electronics-store-134641471.jpg" alt="Shop 1">
+                <h3>Techie Hub</h3>
+                <p>Category: Electronics</p>
+            </div>
+            <div class="shop-card">
+                <img src="https://sc0.blr1.cdn.digitaloceanspaces.com/article/150606-jimitsciuu-1605255091.jpg" alt="Shop 2">
+                <h3>The Book Corner</h3>
+                <p>Category: Books</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Users Say</h2>
+        <div class="testimonial" style="">
+            <p>"LocalLift helped me discover amazing local shops I never knew existed!"</p>
+            <p>Thanks to LocalLift, I've found hidden gems in my neighborhood that I now visit regularly!</p>
+            <p>Shopping local has never been easier – LocalLift connects me with the best shops nearby!</p>
+        </div>
+    </section>
+
+    <!-- Call-to-Action Section -->
+    <section class="cta">
+        <h2>Join Our Community</h2>
+        <p>Sign up today and start exploring local shops near you.</p> <br>
+        <a href="/register" class="btn-secondary">Get Started</a>
+    </section>
+{% endblock %}

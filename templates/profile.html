@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 60px;
+        }
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .card-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+        .back-btn {
+            margin-top: 20px;
+        }
+        .profile-icon {
+            font-size: 36px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h1 class="text-center">User Profile</h1>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="text-center">
+                    <!-- Display profile icon -->
+                    <i class="fas fa-user-circle profile-icon"></i>
+                </div>
+                <h5 class="card-title text-center mt-3">Welcome, {{ current_user.username }}!</h5>
+                <p class="text-center">Email: {{ current_user.email }}</p>
+                <!-- Add other user details here -->
+            </div>
+        </div>
+
+        <!-- Logout Button -->
+        <div class="text-center mt-4">
+            <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+        </div>
+
+        <!-- Back Button -->
+        <div class="text-center mt-3 back-btn">
+            <a href="{{ url_for('home') }}" class="btn btn-secondary">Back to Home</a>
+        </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
