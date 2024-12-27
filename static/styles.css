@@ -176,6 +176,16 @@ body {
     text-decoration: none;
     border-radius: 5px;
 }
+@media (max-width: 480px) {
+    .hero-image img{
+        height: 100px;
+        width: 250px;
+        margin-top: 120px;
+
+    }
+}
+
+
 
 
 /* Styling for Shop Directory */
@@ -506,13 +516,24 @@ nav a:hover {
 /* Media query for very small devices (e.g., small phones) */
 @media (max-width: 480px) {
     nav ul {
-        flex-direction: column;
-        align-items: flex-start;
+        /* flex-direction: column; */
+        text-align: center;
+    }
+
+    nav h1{
+        margin-bottom: 10px;
+    }
+
+    #navbar{
+        display: flex;
+        flex-direction: row;
+        margin-left: 2px;
+        justify-content: center;
     }
 
     nav a {
         font-size: 12px;
-        text-align: left;
+        
     }
 }
 
