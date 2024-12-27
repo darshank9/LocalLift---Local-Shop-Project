@@ -437,12 +437,15 @@ header {
 nav ul {
     list-style-type: none;
     display: flex;
-    justify-content: center;
     padding: 0;
+
 }
 
-nav li {
-    margin: 0 15px;
+#navbar{
+    justify-content: center;
+    display: flex;
+    margin-left: 40ex;
+    gap: 20px;
 }
 
 nav a {
@@ -453,6 +456,7 @@ nav a {
 
 nav a:hover {
     text-decoration: underline;
+    color: yellow;
 }
 
 

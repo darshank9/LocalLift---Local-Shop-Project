@@ -12,12 +12,19 @@
             font-size: 30px;
             color: white;
         }
+    h1{
+        display: flex;
+        margin-left: 10px;
+    }
 </style>
 <body>
     <header>
-        <!-- Header content like navigation -->
+        
         <nav>
+            
             <ul>    
+                <h1>LocalLift</h1>
+                <div id="navbar">
                 <li class="{% if request.endpoint == 'home' %}active{% endif %}"><a href="/">Home</a></li>
                 <li class="{% if request.endpoint == 'shop_directory' %}active{% endif %}"></li><a href="/shop_directory">Shop Directory</a></li>
                 <li class="{% if request.endpoint == 'about' %}active{% endif %}"></li><a href="/about">About</a></li>
@@ -30,6 +37,7 @@
                     <li><a href="{{ url_for('register') }}"><i class="fas fa-user-plus"></i> Register</a></li>
                     <li><a href="{{ url_for('login') }}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
                 {% endif %}
+                </div>
             </ul>
         </nav>
     </header>
