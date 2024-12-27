@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Shop Directory</h2>
+    <form method="POST">
+        <label for="search">Search Shops:</label>
+        <input type="text" id="search" name="search" placeholder="Search by name or location" value="{{ search }}">
+
+        <label for="category">Filter by Category:</label>
+        <select id="category" name="category">
+            <option value="All" {% if category == 'All' %}selected{% endif %}>All</option>
+            {% for cat in categories %}
+                <option value="{{ cat }}" {% if category == cat %}selected{% endif %}>{{ cat }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Filter</button>
+    </form>
+
+    <div class="shop-list">
+        {% for shop in shops %}
+            <div class="card">
+                <h3>{{ shop.name }}</h3>
+                <p>{{ shop.description }}</p>
+                <p>Location: {{ shop.location }}</p>
+                <p>Category: {{ shop.category }}</p>
+                <p>Rating: 
+                    {% set rating = shop.rating if shop.rating is not none else 0 %}
+                    {% for i in range(1, 6) %}
+                        {% if i <= rating %}
+                            &#9733;
+                        {% else %}
+                            &#9734;
+                        {% endif %}
+                    {% endfor %}
+                </p>
+                <a href="{{ url_for('shop_detail', shop_id=shop.id) }}" class="btn btn-primary">View Shop</a>
+            </div>
+        {% else %}
+            <p>No shops found for the selected criteria.</p>
+        {% endfor %}
+    </div>
+
+    <footer style="margin-top: 20ex;">
+        <p>&copy; 2024 LocalLift | <a href="/contact">Contact Us</a></p>
+    </footer>
+<!-- {% endblock %} -->
+
+
+
+<style>
+    .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    margin: 0 0 8px;
+}
+
+.card p {
+    margin: 4px 0;
+}
+
+.card .btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.card .btn:hover {
+    background-color: #0056b3;
+}
+
+
+
+</style>

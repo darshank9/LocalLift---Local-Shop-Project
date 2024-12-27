@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>All Shops</h2>
+    <div class="shop-list">
+        {% for shop in shops %}
+            <div class="card">
+                <h3>{{ shop.name }}</h3>
+                <p>{{ shop.description }}</p>
+                <p>Location: {{ shop.location }}</p>
+                <p>Category: {{ shop.category }}</p>
+                <p>Rating: 
+                    {% for i in range(1, 6) %} 
+                        {% if i <= shop.rating %} 
+                            &#9733; 
+                        {% else %} 
+                            &#9734; 
+                        {% endif %} 
+                    {% endfor %}
+                </p>
+            </div>
+        {% else %}
+            <p>No shops found.</p>
+        {% endfor %}
+    </div>
+{% endblock %}

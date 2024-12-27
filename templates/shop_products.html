@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="shop-detail">
+        <h2>{{ shop.name }}</h2>
+        <p>{{ shop.description }}</p>
+        <p>Location: {{ shop.location }}</p>
+        <p>Category: {{ shop.category }}</p>
+    </div>
+
+    <div class="product-list">
+        <h3>Products</h3>
+        <div class="products">
+            {% for product in products %}
+                <div class="product-card">
+                    <img src="{{ product.image_url }}" alt="{{ product.name }}">
+                    <h4>{{ product.name }}</h4>
+                    <p>{{ product.description }}</p>
+                    <p><strong>Price: ${{ product.price }}</strong></p>
+                </div>
+            {% else %}
+                <p>No products available for this shop.</p>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
+
+
+
+

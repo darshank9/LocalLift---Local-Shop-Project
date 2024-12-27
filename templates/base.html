@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Directory</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<style>
+    .profile-icon {
+            font-size: 30px;
+            color: white;
+        }
+</style>
+<body>
+    <header>
+        <!-- Header content like navigation -->
+        <nav>
+            <ul>    
+                <li class="{% if request.endpoint == 'home' %}active{% endif %}"><a href="/">Home</a></li>
+                <li class="{% if request.endpoint == 'shop_directory' %}active{% endif %}"></li><a href="/shop_directory">Shop Directory</a></li>
+                <li class="{% if request.endpoint == 'about' %}active{% endif %}"></li><a href="/about">About</a></li>
+                <li class="{% if request.endpoint == 'about' %}active{% endif %}"></li><a href="/contact">Contact</a></li>
+                {% if current_user.is_authenticated %}
+                    <li>
+                        <a href="{{ url_for('profile') }}"><i class="fas fa-user-circle profile-icon"></i></a>
+                    </li>
+                {% else %}
+                    <li><a href="{{ url_for('register') }}"><i class="fas fa-user-plus"></i> Register</a></li>
+                    <li><a href="{{ url_for('login') }}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 LocalLift | <a href="/contact">Contact Us</a> | All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>console.log(window.location.pathname); </script>
+  
+</body>
+</html>

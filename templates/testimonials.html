@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Testimonials</h2>
+    <div class="testimonials-list">
+        {% for testimonial in testimonials %}
+            <div class="testimonial-card">
+                <p>{{ testimonial.message }}</p>
+                <p>- {{ testimonial.author }}</p>
+            </div>
+        {% else %}
+            <p>No testimonials available at the moment.</p>
+        {% endfor %}
+    </div>
+{% endblock %}
