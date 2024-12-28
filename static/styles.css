@@ -418,23 +418,23 @@ button:hover {
 
 @media (max-width: 480px) {
     .container {
-        padding: 15px; /* Further reduce padding */
+        padding:  0; 
     }
 
     h2, h3 {
-        font-size: 18px; /* Further reduce heading size */
+        font-size: 18px; 
     }
 
     .form-group input, .form-group textarea {
-        font-size: 12px; /* Smaller font size for very small screens */
-        padding: 8px; /* Further reduce padding */
+        font-size: 12px;
+        padding: 8px; 
     }
 
     button {
-        padding: 10px; /* Minimized button padding */
-        font-size: 14px; /* Smaller font size for button */
-    }
-}
+        padding: 10px; 
+        font-size: 10px; 
+}}
+
 
 /* Header styles */
 header {
@@ -455,6 +455,7 @@ nav ul {
     justify-content: center;
     display: flex;
     margin-left: 40ex;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -469,73 +470,33 @@ nav a:hover {
     color: yellow;
 }
 
-
-/* Media query for large desktops */
-@media (min-width: 1200px) {
+/* Media query for tablets and smaller screens */
+@media (max-width: 768px) {
     #navbar {
-        gap: 40px;
+        margin-left: 10px; /* Further reduce left margin */
+        gap: 15px; /* Adjust gap for better spacing */
     }
 
     nav a {
-        font-size: 20px;
-    }
-}
-
-/* Media query for tablets (landscape and portrait) */
-@media (max-width: 1199px) and (min-width: 769px) {
-    nav ul {
-        justify-content: space-around;
-    }
-
-    #navbar {
-        gap: 30px;
-    }
-
-    nav a {
-        font-size: 16px;
+        font-size: 16px; /* Slightly smaller font size */
     }
 }
 
 /* Media query for mobile devices */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
+@media (max-width: 480px) {
+    header {
+        padding: 10px 0; /* Reduce padding for smaller screens */
+    }
+
+    nav a {
+        font-size: 14px; /* Further reduce font size */
     }
 
     #navbar {
-        gap: 15px;
-        flex-direction: column;
-    }
-
-    nav a {
-        font-size: 14px;
+        gap: 10px; /* Further reduce gap between items */
     }
 }
 
-/* Media query for very small devices (e.g., small phones) */
-@media (max-width: 480px) {
-    nav ul {
-        /* flex-direction: column; */
-        text-align: center;
-    }
-
-    nav h1{
-        margin-bottom: 10px;
-    }
-
-    #navbar{
-        display: flex;
-        flex-direction: row;
-        margin-left: 2px;
-        justify-content: center;
-    }
-
-    nav a {
-        font-size: 12px;
-        
-    }
-}
 
 
 /* Form styles */
@@ -656,7 +617,7 @@ footer a:hover {
     footer {
         font-size: 10px; 
         padding: 10px 0;
-        margin-top: 320ex;
+        margin-top: 370ex;
     }
 }
 
